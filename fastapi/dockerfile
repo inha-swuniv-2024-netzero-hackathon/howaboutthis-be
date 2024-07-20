@@ -1,0 +1,10 @@
+FROM python:3.9-alpine
+
+WORKDIR /usr/src/fastapi_app
+COPY requirements.txt .
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
+COPY ./app .
+
+// 포트포워딩 필요(컨테이너 내부는 80번 포트로 fastapi 서버 호스팅)
+// command: uvicorn main:app --host 0.0.0.0 --port 80
