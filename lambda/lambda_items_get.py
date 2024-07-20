@@ -1,6 +1,4 @@
-
 from typing import Optional
-from pydantic import BaseModel
 import boto3, json
 
 # AWS DynamoDB 연결
